@@ -1,5 +1,7 @@
 <template>
   <router-view></router-view>
+  <router-link to="/Profile">profil</router-link>
+  <router-link to="/Home">home</router-link>
 </template>
 
 <script>
@@ -29,7 +31,7 @@ body
   background-image: linear-gradient(to bottom right, #FBAB7E, #F7CE68);
   display: flex;
   justify-content: center;
-  padding: 0% 8%;
+  padding: 0% 5%;
   min-height: 100vh;
 }
 
