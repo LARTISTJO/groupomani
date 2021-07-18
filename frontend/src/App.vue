@@ -1,7 +1,5 @@
 <template>
   <router-view></router-view>
-  <router-link to="/Profile">profil</router-link>
-  <router-link to="/Home">home</router-link>
 </template>
 
 <script>

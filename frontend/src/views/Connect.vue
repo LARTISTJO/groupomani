@@ -31,6 +31,7 @@
         </button>
       </div>
     </div>
+    <router-link to="/Home">home</router-link>
 </template>
 
 <script>
@@ -141,7 +142,7 @@ img
 {
   max-width: 100%;
   width: 900px;
-  background:white;
+  background:lightskyblue;
   border-radius: 20px;
   padding:32px;
 }

@@ -32,15 +32,10 @@
             </div> 
         </div>
     </section>
+    
 </template>
 
 <style scoped lang="scss">
-
-section
-{
-    max-width: 100%;
-    width: 900px;
-}
 
 #selection
 {
@@ -52,7 +47,7 @@ section
 
 h2
 {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
   color: #787878;
   font-size: 1.5em;
 }
@@ -67,10 +62,12 @@ h2
 
 .post
 {   
-    background-color:seashell;
+    background-color:lightskyblue;
     margin-bottom: 40px;
     padding: 13px 20px;
     border-radius: 20px;
+    max-width: 100%;
+    width: 900px;
 }
 
 .border
@@ -81,7 +78,7 @@ h2
 
 .inputs
 {
-     border: solid 3px blueviolet;
+    border: none;
     border-radius: 20px;
     padding-left: 7px;
 }
@@ -103,7 +100,7 @@ h2
 #textpost
 {
     color: #ffd7d7;
-    background: #f0f0f0;
+    background: #e5e5e5;
     padding:2% ;
     width: 100%;
     font-size: 1.2em;
@@ -127,7 +124,7 @@ label
     font-size: 1.2em;
     font-weight: bold;
     color: #ffffff;
-    background-color: #d1515a;
+    background-color: #cecece;
     border-radius: 37px;
     border:none;
     box-shadow: 0px 0px 16px #434343;
