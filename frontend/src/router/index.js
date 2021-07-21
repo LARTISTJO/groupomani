@@ -1,13 +1,20 @@
-import { createWebHistory, createRouter } from "vue-router";
-import Connect from "@/views/Connect.vue";
+import { createWebHashHistory, createRouter } from "vue-router";
+import CreateAcc from "@/views/CreateAcc.vue";
 import Profile from "@/views/Profile.vue";
 import Home from "@/views/Home.vue";
+import Login from "@/views/Login.vue";
 
 const routes = [
   { 
-    name: 'login',
+    name: 'CreateAcc',
     path: '/', 
-    component: Connect,
+    component: CreateAcc,
+  },
+  { 
+    name: 'login',
+    path: '/Login', 
+    component: Login,
+    
   },
   { 
     name: 'profile',
@@ -24,7 +31,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes,
 })
 
