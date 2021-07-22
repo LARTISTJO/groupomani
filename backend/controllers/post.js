@@ -24,7 +24,7 @@ exports.createPost = (req, res, next) => {
     .catch((error) => res.status(400).json({ error }));
 };
 
-exports.getAllPost = (req, res, next) => {
+exports.getAllPosts = (req, res, next) => {
   models.Post.findAll({
     order: [["updatedAt", "DESC"]],
     attributes: [
@@ -54,7 +54,7 @@ exports.getAllPost = (req, res, next) => {
 };
 
 exports.getOnePost = (req, res, next) => {
-  models.Message.findOne({
+  models.Post.findOne({
     attributes: [
       "id",
       "idUsers",
@@ -93,7 +93,7 @@ exports.deletePost = (req, res, next) => {
             post
               .destroy()
               .then(() =>
-                res.status(200).json({ message: "Message supprimé !" })
+                res.status(200).json({ message: "Post supprimé !" })
               )
               .catch((error) => res.status(400).json({ error }));
           });
@@ -102,13 +102,13 @@ exports.deletePost = (req, res, next) => {
             .destroy()
             .then(() => {
               res.status(200).json({
-                message: "Message supprimé !",
+                message: "Post supprimé !",
               });
             })
             .catch((error) => {
               res.status(400).json({
                 error: error,
-                message: "Le message n'a pas pu être supprimé",
+                message: "Le post n'a pas pu être supprimé",
               });
             });
         }

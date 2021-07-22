@@ -14,9 +14,13 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/vue-fontawesome": "^3.0.0-4",
     "@vue/cli": "^4.5.13",
+    "@vue/cli-plugin-router": "^4.5.0",
+    "@vue/cli-plugin-vuex": "^4.5.13",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "es6-promise": "^4.2.8",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.1",
     "vue": "^3.0.0",
     "vue-router": "^4.0.10",
     "vuex": "^4.0.2"

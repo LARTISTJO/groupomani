@@ -23,14 +23,14 @@
 import axios from "axios";
 
 export default {
-  name: 'Login',
+  name: 'login',
   data () {
     return {
-      mode: 'login',
       email: '',
       pseudo: '',
       password: '',
       error: '',
+      isAdmin: false,
     }
   },
    methods: {
@@ -44,7 +44,7 @@ export default {
         .post("http://localhost:3000/api/auth/signup", data)
         .then((res) => {
           console.log(res);
-          this.$router.push("/Home");
+          this.$router.push("/Login");
         })
         .catch((error) => {
           this.error = error.response.data;

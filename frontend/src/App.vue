@@ -1,14 +1,8 @@
 <template>
-  <router-view></router-view>
+  <router-view />
 </template>
 
-<script>
-export default {
-  name: 'App',
-  components: {
-  }
-}
-</script>
+
 
 <style>
 * 
@@ -33,4 +27,15 @@ body
   min-height: 100vh;
 }
 
+.button {
+    background: #2196F3;
+    color:white;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 15px;
+    border: none;
+    width: 100%;
+    padding: 16px;
+    transition: .4s background-color;
+  }
 </style>

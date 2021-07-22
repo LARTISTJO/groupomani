@@ -37,7 +37,7 @@ export default {
         })
         .then((res) => {
           { localStorage.setItem("token", res.data.token);}
-          this.$router.push("/Home");
+          this.$router.push("/forum");
         })
         .catch((error) => {
           this.error = error.response.data;
@@ -133,15 +133,4 @@ img
   background: #1976D2;
 }
 
-.button--disabled 
-{
-  background:#cecece;
-}
-
-.button--disabled:hover 
-{
-  cursor:not-allowed;
-  background:#cecece;
-}
-
-</style>>
+</style>

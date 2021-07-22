@@ -14,7 +14,7 @@ exports.createComment = (req, res, next) => {
 
   models.Comment.create({
     idUsers: userId,
-    idPost: req.params.id,
+    idPosts: req.params.id,
     comment: req.body.comment,
   })
     .then(() => res.status(200).json({ message: "Commentaire enregistré !" }))
@@ -24,7 +24,7 @@ exports.createComment = (req, res, next) => {
 exports.getAllComment = (req, res, next) => {
   models.Comment.findAll({
     where: {
-      idPost: req.params.id,
+      idPosts: req.params.id,
     },
     order: [["updatedAt", "DESC"]],
     include: [
@@ -52,7 +52,7 @@ exports.deleteComment = (req, res, next) => {
 
   models.Comment.findOne({
     where: {
-      idPost: req.params.idPost,
+      idPosts: req.params.idPosts,
       id: req.params.id,
     },
   }).then((comment) => {
