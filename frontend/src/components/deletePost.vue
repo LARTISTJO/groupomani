@@ -21,7 +21,7 @@ export default {
     deleteMessage() {
       let token = localStorage.getItem("token");
       axios
-        .delete("http://localhost:3000/api/messages/" + this.id, {
+        .delete("http://localhost:3000/api/posts/" + this.id, {
           headers: { Authorization: "Bearer " + token },
         })
         .then(() => {

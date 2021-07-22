@@ -26,8 +26,8 @@ app.use(hpp());
 
 app.use('/images', express.static(path.join(__dirname, 'images')));
   
-app.use("/api/post", postRoutes);
-app.use("/api/post/", commentRoutes);
+app.use("/api/posts", postRoutes);
+app.use("/api/posts/", commentRoutes);
 app.use("/api/auth", userRoutes);
 app.use("/api/auth", profileRoutes);
 

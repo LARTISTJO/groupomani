@@ -1,6 +1,6 @@
 <template>
   <div class="forum">
-      <div id="message-card" v-for="message in allPosts" :key="post.id">
+      <div id="message-card" v-for="post in allPosts" :key="post.id">
         <h1 class="title">{{ post.title }}</h1>
         <div class="content">
           <img
@@ -15,12 +15,12 @@
           <i>{{ post.User.pseudo }}</i>
         </div>
         <div>
-          <router-link class="one-message" :to="'/onePost/' + post.id"
+          <router-link class="one_post" :to="'/onePost/' + post.id"
             >Voir les commentaires</router-link
           >
         </div>
         <div class="adminDelete" v-if="isAdmin == true">
-          <delete :id="post.id" />
+          <deletePost :id="post.id" />
         </div>
       </div>
     </div>
@@ -28,8 +28,10 @@
 
 <script>
 import deletePost from "./deletePost";
+
 let moment = require("moment");
 let jwt = require("jsonwebtoken");
+
 import axios from "axios";
 export default {
   name: "loadPosts",
@@ -46,7 +48,7 @@ export default {
       idUsers: "",
       title: "",
       content: "",
-      createAt: "",
+      createdAt: "",
     };
   },
   methods: {
@@ -54,7 +56,7 @@ export default {
       let token = localStorage.getItem("token");
       let decodedToken = jwt.verify(token, "RANDOM_TOKEN_SECRET");
       axios
-        .get("http://localhost:3000/api/post/", {
+        .get("http://localhost:3000/api/posts/", {
           headers: { Authorization: "Bearer " + token },
         })
         .then((res) => {
@@ -72,50 +74,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.forum {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-#message-card {
-  background-color: #192a48;
-  color: white;
-  width: 80%;
-  max-width: 500px;
-  border: solid 2px;
-  margin: 15px;
-  opacity: 0.8;
-}
-a {
-  text-decoration: none;
-  color: red;
-}
-.content {
-  font-size: 18px;
-  padding-bottom: 15px;
-}
-img {
-  max-width: 500px;
-  width: 90%;
-  height: 90%;
-}
-.createdAt {
-  font-size: 12px;
-  display: flex;
-  justify-content: space-between;
-  padding-left: 30px;
-  padding-right: 30px;
-  margin-bottom: 15px;
-}
-.one-message {
-  background-color: #c46e78;
-  color: white;
-  padding: 9px;
-  border-radius: 25px;
-  font-size: 14px;
-}
-.adminDelete {
-  margin: 30px;
-}
-</style>
+

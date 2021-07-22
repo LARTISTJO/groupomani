@@ -41,7 +41,7 @@ export default {
       let token = localStorage.getItem("token");
       axios
         .post(
-          "http://localhost:3000/api/post/" + this.id + "/comment/",
+          "http://localhost:3000/api/posts/" + this.id + "/comment/",
           data,
           {
             headers: { Authorization: "Bearer " + token },

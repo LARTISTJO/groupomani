@@ -3,7 +3,7 @@
         <img src="../assets/logo.png" alt="logo" />
         <ul class="links">
             <li><router-link to="/profile"> Profil</router-link></li>
-            <li><a to="/login" v-on:click="Logout()"> Déconnexion</a></li>
+            <li><router-link to="/login" v-on:click="Logout()"> Déconnexion</router-link></li>
         </ul>
         <h2>Accueil</h2>
         <div>
@@ -17,15 +17,13 @@
 </template>
 
 <script>
+
 import loadPosts from "../components/loadPosts.vue";
 import newPost from "../components/newPost.vue";
+
 export default {
   name: "forum",
-  components: {
-    loadPosts,
-    newPost,
-    
-  },
+  components: { loadPosts, newPost, },
   data() {
     return {
       token: "",

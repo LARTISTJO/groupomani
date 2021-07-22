@@ -28,13 +28,12 @@ exports.deleteProfile = (req, res, next) => {
   const token = req.headers.authorization.split(" ")[1];
   const decodedToken = jwt.verify(token, "RANDOM_TOKEN_SECRET");
   const userId = decodedToken.userId;
-  const isAdmin = decodedToken.isAdmin;
 
   models.User.findOne({
     where: { id: req.params.id },
   })
     .then((user) => {
-      if (user.id === userId || isAdmin === true) {
+      if (user.id === userId) {
         user
           .destroy()
           .then(() => {
@@ -43,9 +42,9 @@ exports.deleteProfile = (req, res, next) => {
             });
           })
           .catch((error) => {
-            res.status(400).json({
-              error: "L'utilisateur n'a pas pu être supprimé !",
-            });
+            res.status(402).json({
+              error: "L'utilisateur n'a pas été supprimé !",
+            }); 
           });
       }
     })

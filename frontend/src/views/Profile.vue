@@ -12,6 +12,7 @@
 <script>
 
 import axios from "axios";
+
 let jwt = require("jsonwebtoken");
 export default {
   name: "profile",
