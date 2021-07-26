@@ -11,7 +11,7 @@
         />
       </div>
       <button type="submit" @click.prevent="buttonNewComment">
-        Envoyer
+        Envoyer <i class="far fa-comments"></i>
       </button>
     </form>
     <div class="error" v-if="error">

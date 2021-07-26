@@ -1,12 +1,13 @@
 <template>
   <div>
-    <button type="submit" @click.prevent="deleteComment"></button>
+    <button type="submit" @click.prevent="deleteComment"><i class="fas fa-trash-alt"></i></button>
   </div>
 </template>
 
 
 <script>
 import axios from "axios";
+
 export default {
   name: "deleteComment",
   props: {

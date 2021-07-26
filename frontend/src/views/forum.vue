@@ -1,6 +1,6 @@
 <template>
     <section>
-        <img src="../assets/logo.png" alt="logo" />
+        <img src="../assets/icon-left-font.png" alt="logo" />
         <ul class="links">
             <li><router-link to="/profile"> Profil</router-link></li>
             <li><router-link to="/login" v-on:click="Logout()"> Déconnexion</router-link></li>

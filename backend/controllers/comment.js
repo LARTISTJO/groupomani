@@ -18,10 +18,10 @@ exports.createComment = (req, res, next) => {
     comment: req.body.comment,
   })
     .then(() => res.status(200).json({ message: "Commentaire enregistré !" }))
-    .catch((error) => res.status(500).json(error));
+    .catch(() => res.status(400).json({ error: "Commentaire non créé" }));
 };
 
-exports.getAllComment = (req, res, next) => {
+exports.getAllComments = (req, res, next) => {
   models.Comment.findAll({
     where: {
       idPosts: req.params.id,
@@ -52,7 +52,7 @@ exports.deleteComment = (req, res, next) => {
 
   models.Comment.findOne({
     where: {
-      idPosts: req.params.idPosts,
+      idPosts: req.params.idPosts ,
       id: req.params.id,
     },
   }).then((comment) => {

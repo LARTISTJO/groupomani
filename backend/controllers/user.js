@@ -40,8 +40,8 @@ exports.signup = (req, res, next) => {
           isAdmin: user.isAdmin,
         });
       })
-      .then(() => res.status(201).json({ message: 'Utilisateur créé !' }))
-      .catch((error) => res.status(400).json({ error }));
+      .then(() => res.status(201).json({ message: "Utilisateur créé !" }))
+      .catch((error) => res.status(400).json({ error: error }));
     })
     .catch((error) => res.status(500).json({ error }));
 };
@@ -69,11 +69,12 @@ exports.login = (req, res, next) => {
             userId: user.id,
             pseudo: user.pseudo,
             token: jwt.sign({ userId: user.id, isAdmin: user.isAdmin },
-              'RANDOM_TOKEN_SECRET',
-              { expiresIn: '24h' }
+              "RANDOM_TOKEN_SECRET",
+              { expiresIn: "24h", }
             )
           });
         })
         .catch(error => res.status(500).json({ error }));
     })
+    .catch((error) => res.status(500).json({ error }));
 };

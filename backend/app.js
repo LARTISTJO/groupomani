@@ -1,15 +1,15 @@
 const express = require('express');
-const path = require('path');
-const helmet = require('helmet');
-const hpp = require("hpp");
+const app = express();
 const postRoutes = require("./routes/post");
 const commentRoutes = require("./routes/comment");
 const userRoutes = require("./routes/user");
 const profileRoutes = require("./routes/profile");
+const path = require('path');
 
-require('dotenv').config();
+const helmet = require('helmet');
+const hpp = require("hpp");
 
-const app = express();
+
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -24,11 +24,11 @@ app.use(express.json());
 app.use(helmet());
 app.use(hpp());
 
-app.use('/images', express.static(path.join(__dirname, 'images')));
+app.use("/images", express.static(path.join(__dirname, "images")));
   
 app.use("/api/posts", postRoutes);
 app.use("/api/posts/", commentRoutes);
-app.use("/api/auth", userRoutes);
-app.use("/api/auth", profileRoutes);
+app.use("/api/user", userRoutes);
+app.use("/api/profile", profileRoutes);
 
 module.exports = app;

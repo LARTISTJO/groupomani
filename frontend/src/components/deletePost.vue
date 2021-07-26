@@ -7,6 +7,7 @@
 
 <script>
 import axios from "axios";
+
 export default {
   name: "deletePost",
   props: {
@@ -22,7 +23,7 @@ export default {
       let token = localStorage.getItem("token");
       axios
         .delete("http://localhost:3000/api/posts/" + this.id, {
-          headers: { Authorization: "Bearer " + token },
+          headers: { Authorization: " Bearer " + token },
         })
         .then(() => {
           alert("Votre message a bien été supprimé !");

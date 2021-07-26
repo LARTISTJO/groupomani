@@ -10,11 +10,14 @@
     <div id="onePost">
       <div id="comment-card" v-for="comment in allComments" :key="comment.id">
         <div class="content">
-          <i class="pseudo"
+          <i class="user-name"
             >{{ comment.User.pseudo }}</i
           ><br />
           <strong>{{ comment.comment }}</strong><br />
           <i class="date">{{ moment(comment.createdAt).fromNow() }}</i>
+        </div>
+        <div v-if="comment.idUsers == userId">
+          <deleteComment :idComm="comment.id" />
         </div>
         <div v-if="isAdmin == true">
           <deleteComment :idComm="comment.id" />

@@ -3,14 +3,15 @@
     <form method="post" @submit.prevent="loginUser" class="card">
       <h1 class="card__title">Connexion</h1>
       <div class="form-row">
-        <input v-model="email" class="form-row__input" type="text" placeholder="Adresse mail"/>
+        <input v-model="email" class="form-row__input" type="text" placeholder="Adresse mail" />
       </div>
       <div class="form-row">
         <input v-model="password" class="form-row__input" type="password" placeholder="Mot de passe"/>
       </div>
       <div class="form-row">
-        <button type="submit" @click.prevent="loginUser" class="button">Connexion</button>
+        <button type="submit" class="button">Connexion</button>
       </div>
+      <div class="error" v-if="error"> {{ error.error }} </div>
     </form>
 </template>
 

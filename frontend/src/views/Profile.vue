@@ -2,20 +2,43 @@
 <img src="../assets/icon-left-font.png"> 
   <div class="card">
     <h1 class="card__title">Espace Perso</h1>
+    <router-link to="/forum">Retour</router-link>
     <p>{{ dataProfile.pseudo }} {{ dataProfile.email }}</p>
     <div class="form-row">
       <button class="button" type="submit" @click.prevent="deleteProfile">Supprimer mon compte</button>
+    </div>
+       <h4>Tous mes messages</h4>
+    <div class="my-posts">
+      <div
+        class="my-post"
+        v-for="myPost in postsProfile"
+        :key="myPost.id"
+      >
+        <h3>{{ myPost.title }}</h3>
+        <img
+          :src="myPost.image"
+          :alt="myPost.image"
+          v-if="myPost.image != null"
+        /><br />
+        <p>{{ myPost.content }}</p>
+        <deletePost :id="myPost.id" />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 
+import deletePost from "../components/deletePost.vue";
 import axios from "axios";
 
 let jwt = require("jsonwebtoken");
+
 export default {
   name: "profile",
+   components: {
+    deletePost,
+  },
  
   data() {
     return {
@@ -23,6 +46,7 @@ export default {
       error: "",
       userId: "",
       dataProfile: [],
+      postsProfile: [],
       email: "",
       pseudo: "",
     };
@@ -47,12 +71,27 @@ export default {
         });
     },    
 
+     loadPostsProfile() {
+      let token = localStorage.getItem("token");
+      let userId = localStorage.getItem("id");
+      axios
+        .get("http://localhost:3000/api/auth/profile/" + userId + "/posts", {
+          headers: { Authorization: "Bearer " + token },
+        })
+        .then((res) => {
+          this.postsProfile = res.data;
+        })
+        .catch((error) => {
+          console.log({ error });
+        });
+    },
+
     deleteProfile() {
       let token = localStorage.getItem("token");
       let userId = localStorage.getItem("id");
       axios
-        .delete("http://localhost:3000/api/auth/profile/" + userId, {
-          headers: { Authorization: "Bearer " + token },
+        .delete("http://localhost:3000/api/profile/" + userId, {
+          headers: { Authorization: "Bearer" + token },
         })
         .then(() => {
           alert("Votre compte est supprimé !");
@@ -65,11 +104,51 @@ export default {
   },
   mounted() {
     this.loadProfile();
+    this.loadPostsProfile();
   },
 };
 </script>
 
 <style scoped>
+form {
+  margin-top: 30px;
+}
+input {
+  margin-bottom: 10px;
+}
+.deletebtn {
+  background-color: rgb(255, 80, 80);
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+.my-posts {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  
+}
+img {
+  width: 90px;
+  height: 90px;
+}
+.my-post {
+  background-color: #192a48;
+  color: white;
+  width: 20%;
+  font-size: 12px;
+  margin: 15px;
+  padding: 10px;
+  opacity: 0.8;
+  
+}
+.error {
+  font-size: 13px;
+  background-color: rgb(231, 185, 185);
+  color: rgb(53, 21, 21);
+  margin-top: 30px;
+  padding: 10px;
+}
 
- 
-</style>>
+</style>

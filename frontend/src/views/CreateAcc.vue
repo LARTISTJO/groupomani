@@ -5,7 +5,7 @@
       <p class="card__subtitle">Tu as déjà un compte ? <router-link to="/login" class="card__action">Connexion</router-link></p>
       
       <div class="form-row">
-        <input v-model="email" class="form-row__input" type="text" placeholder="Adresse mail"/>
+        <input v-model="email" class="form-row__input" type="email" placeholder="Adresse mail"/>
       </div>
       <div class="form-row">
         <input v-model="pseudo" class="form-row__input" type="text" placeholder="Pseudo"/>
@@ -17,6 +17,7 @@
         <button type="submit" @click.prevent="createAccount" class="button">Créer mon compte</button>
       </div>
     </form>
+     <div class="error" v-if="error"> {{ error.error }} </div>
 </template>
 
 <script>
@@ -30,7 +31,6 @@ export default {
       pseudo: '',
       password: '',
       error: '',
-      isAdmin: false,
     }
   },
    methods: {
@@ -44,7 +44,7 @@ export default {
         .post("http://localhost:3000/api/auth/signup", data)
         .then((res) => {
           console.log(res);
-          this.$router.push("/Login");
+          this.$router.push("/forum");
         })
         .catch((error) => {
           this.error = error.response.data;
