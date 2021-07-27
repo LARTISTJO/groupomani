@@ -44,7 +44,7 @@ export default {
         .post("http://localhost:3000/api/auth/signup", data)
         .then((res) => {
           console.log(res);
-          this.$router.push("/forum");
+          this.$router.push("/login");
         })
         .catch((error) => {
           this.error = error.response.data;

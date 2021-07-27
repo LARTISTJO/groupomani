@@ -57,6 +57,7 @@ export default {
       let token = localStorage.getItem("token");
       const decodedToken = jwt.verify(token, "RANDOM_TOKEN_SECRET");
       const userId = decodedToken.userId;
+      console.log(userId);
     
       axios
         .get("http://localhost:3000/api/auth/profile/" + userId , {
@@ -88,9 +89,11 @@ export default {
 
     deleteProfile() {
       let token = localStorage.getItem("token");
-      let userId = localStorage.getItem("id");
+      const decodedToken = jwt.verify(token, "RANDOM_TOKEN_SECRET");
+      const userId = decodedToken.userId;
+      console.log(userId);
       axios
-        .delete("http://localhost:3000/api/profile/" + userId, {
+        .delete("http://localhost:3000/api/auth/profile/" + userId , {
           headers: { Authorization: "Bearer" + token },
         })
         .then(() => {
