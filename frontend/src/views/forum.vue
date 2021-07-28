@@ -2,14 +2,14 @@
     <section>
         <img src="../assets/icon-left-font.png" alt="logo" />
         <ul class="links">
-            <li><router-link to="/profile"> Profil</router-link></li>
-            <li><router-link to="/login" v-on:click="Logout()"> Déconnexion</router-link></li>
+            <li><router-link to="/profile" style="display: inline-block;text-decoration:none;"> Profil</router-link></li>
+            <li><router-link to="/login" v-on:click="Logout()" style="display: inline-block;text-decoration:none;"> Déconnexion</router-link></li>
         </ul>
         <h2>Accueil</h2>
-        <div>
+        <div class= center>
             <newPost />
         </div>
-        <div>
+        <div class = center>
             <loadPosts />
         </div>
     </section>
@@ -41,13 +41,6 @@ export default {
 
 <style scoped lang="scss">
 
-h2
-{
-  margin-bottom: 10px;
-  color: #787878;
-  font-size: 1.5em;
-}
-
 img 
 {
   display: flex;
@@ -55,5 +48,17 @@ img
   border-radius: 0px 0px 20px 20px;
   margin: auto;
   margin-bottom: 40px;
+}
+
+.links
+{
+  list-style-type: none;
+  font-size: 1.3em;
+  font-weight: 700;
+}
+
+router-link
+{
+  text-decoration:none;
 }
 </style>

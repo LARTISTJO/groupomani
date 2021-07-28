@@ -1,7 +1,8 @@
 <template>
   <div class="forum">
-    <form method="post" @submit.prevent="buttonNewPost">
-      <h2>Poster un message <i class="far fa-paper-plane"></i></h2>
+    <form method="post" @submit.prevent="buttonNewPost" class="card forum">
+    <div>
+      <h2>Poster un message</h2>
       <div>
         <label for="title"></label>
         <input type="title" id="title" placeholder="Titre" v-model="title" />
@@ -10,18 +11,15 @@
         <label for="content"></label>
         <textarea type="text" id="content" placeholder="Votre post !" v-model="content"/>
       </div>
-      
-        
-        <div class="input-group mb-3">
-  <input type="file" class="form-control" id="inputGroupFile02" ref="file" @change="selectFile()" />
-  <label  class="input-group-text" for="inputGroupFile02">Upload</label>
-</div>
-      
       <div class="input-group mb-3">
-  <button class="btn btn-outline-secondary" type="submit" @click.prevent="buttonNewPost" id="button-addon1">Envoyer</button>
-  <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-</div>
-    <div class="error" v-if="error"> {{ error.error }} </div>
+        <input type="file" class="form-control" id="inputGroupFileAddon03" ref="file" @change="selectFile()" />
+      </div>
+
+      <div class="input-group mb-3">
+        <button class="btn btn-outline-secondary" type="submit" @click.prevent="buttonNewPost" id="button-addon1">Envoyer</button>
+      </div>
+      <div class="error" v-if="error"> {{ error.error }} </div>
+      </div>
     </form>
   </div>
 </template>
@@ -70,3 +68,21 @@ export default {
   },
 };
 </script>
+
+<style>
+
+.forum
+{
+  max-width: 100%;
+  width: 700px;
+  margin-bottom: 20px;
+  background:#A7A6A3;
+  border-radius:20px;
+}
+.center
+{
+  display:flex;
+  justify-content:center;
+}
+
+</style>

@@ -1,25 +1,17 @@
 <template>
-<img src="../assets/icon-left-font.png"> 
-  <div class="card">
+<img class="profile" src="../assets/icon-left-font.png"> 
+  <div class="card profile-card">
     <h1 class="card__title">Espace Perso</h1>
-    <router-link to="/forum">Retour</router-link>
+    <router-link to="/forum" style="display: inline-block;text-decoration:none;font-size: 1.5em">Retour</router-link>
     <p>{{ dataProfile.pseudo }} {{ dataProfile.email }}</p>
     <div class="form-row">
       <button class="button" type="submit" @click.prevent="deleteProfile">Supprimer mon compte</button>
     </div>
        <h4>Tous mes messages</h4>
     <div class="my-posts">
-      <div
-        class="my-post"
-        v-for="myPost in postsProfile"
-        :key="myPost.id"
-      >
+      <div class="my-post" v-for="myPost in postsProfile" :key="myPost.id">
         <h3>{{ myPost.title }}</h3>
-        <img
-          :src="myPost.image"
-          :alt="myPost.image"
-          v-if="myPost.image != null"
-        /><br />
+        <img :src="myPost.image" :alt="myPost.image" v-if="myPost.image != null"/><br />
         <p>{{ myPost.content }}</p>
         <deletePost :id="myPost.id" />
       </div>
@@ -61,7 +53,7 @@ export default {
     
       axios
         .get("http://localhost:3000/api/auth/profile/" + userId , {
-          headers: { Authorization: "Bearer " + token },
+          headers: { Authorization: token },
         })
         .then((res) => {
         
@@ -113,18 +105,23 @@ export default {
 </script>
 
 <style scoped>
-form {
-  margin-top: 30px;
+h4
+{
+  font-size:1.5em;
 }
-input {
-  margin-bottom: 10px;
+
+.profile-card
+{
+  background:#A7A6A3;
 }
-.deletebtn {
-  background-color: rgb(255, 80, 80);
-  margin-top: 20px;
-  margin-bottom: 50px;
+
+.profile
+{
+  margin-bottom:45px;
 }
-.my-posts {
+
+.my-posts 
+{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -132,21 +129,21 @@ input {
   padding-bottom: 20px;
   
 }
-img {
-  width: 90px;
-  height: 90px;
-}
-.my-post {
+
+.my-post 
+{
   background-color: #192a48;
   color: white;
-  width: 20%;
-  font-size: 12px;
+  font-size: 1.4em;
   margin: 15px;
   padding: 10px;
   opacity: 0.8;
-  
+  text-align: center;
+  border-radius:20px;
 }
-.error {
+
+.error 
+{
   font-size: 13px;
   background-color: rgb(231, 185, 185);
   color: rgb(53, 21, 21);

@@ -38,8 +38,10 @@ export default {
 </script>
 
 <style scoped>
-button {
+button 
+{
   background-color: red;
   color: white;
+  font-size: 20px;
 }
 </style>
