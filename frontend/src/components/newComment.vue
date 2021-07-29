@@ -3,16 +3,9 @@
     <form method="post" @submit.prevent="buttonNewComment">
       <div>
         <label for="comment"></label>
-        <input
-          type="text"
-          id="comment"
-          placeholder="Commentaire"
-          v-model="comment"
-        />
+        <input type="text" id="comment" placeholder="Commentaire" v-model="comment"/>
       </div>
-      <button type="submit" @click.prevent="buttonNewComment">
-        Envoyer <i class="far fa-comments"></i>
-      </button>
+      <button type="submit" @click.prevent="buttonNewComment">Envoyer</button>
     </form>
     <div class="error" v-if="error">
       {{ error.error }}
@@ -61,14 +54,17 @@ export default {
 </script>
 
 <style scoped>
-input {
+input 
+{
   border: solid rgb(206, 206, 206) 1px;
   text-decoration: none;
   box-shadow: 10px 5px 9px #67708469;
   margin-bottom: 20px;
   width: 50%;
 }
-button {
+
+button 
+{
   background-color: #192a48;
   color: white;
   padding: 6px;
@@ -76,7 +72,9 @@ button {
   border: none;
   text-decoration: none;
 }
-.error {
+
+.error 
+{
   font-size: 11px;
   background-color: rgb(231, 185, 185);
   color: rgb(53, 21, 21);

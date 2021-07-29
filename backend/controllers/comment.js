@@ -13,7 +13,7 @@ exports.createComment = (req, res, next) => {
   }
 
   models.Comment.create({
-    idUsers: userId,
+    idUser: userId,
     idPosts: req.params.id,
     comment: req.body.comment,
   })
@@ -56,7 +56,7 @@ exports.deleteComment = (req, res, next) => {
       id: req.params.id,
     },
   }).then((comment) => {
-    if (comment.idUsers === userId || isAdmin === true) {
+    if (comment.idUser === userId || isAdmin === true) {
       comment
         .destroy()
         .then(() => {

@@ -3,15 +3,17 @@
       <div id="message-card" v-for="post in allPosts" :key="post.id">
         <h1 class="title">{{ post.title }}</h1>
         <div class="content">
-          <img :src="post.image" /> 
+          <img :src="post.image" :alt="post.image"
+            v-if="post.image != null"/> 
         </div>
         <h1>{{ post.content }}</h1>
         <div class="createdAt">
-          <i class="size">{{ moment(post.createdAt).fromNow() }}</i>
+          <i>{{ moment(post.createdAt).fromNow() }}</i>
         </div>
-        <i class="size">{{ post.User.pseudo }}</i>
+        
+        
         <div>
-          <router-link style="display: inline-block;text-decoration:none;" class="one-post" :to="'/onePost/' + post.id">
+          <router-link class="one-post" :to="'/onePost/' + post.id">
           Voir les commentaires</router-link>
         </div>
         <div class="adminDelete" v-if="isAdmin == true">

@@ -7,7 +7,7 @@
     <div class="form-row">
       <button class="button" type="submit" @click.prevent="deleteProfile">Supprimer mon compte</button>
     </div>
-       <h4>Tous mes messages</h4>
+       <h4>Mes posts</h4>
     <div class="my-posts">
       <div class="my-post" v-for="myPost in postsProfile" :key="myPost.id">
         <h3>{{ myPost.title }}</h3>
@@ -31,6 +31,9 @@ export default {
    components: {
     deletePost,
   },
+   props: {
+    id: Number,
+  },
  
   data() {
     return {
@@ -49,11 +52,10 @@ export default {
       let token = localStorage.getItem("token");
       const decodedToken = jwt.verify(token, "RANDOM_TOKEN_SECRET");
       const userId = decodedToken.userId;
-      console.log(userId);
     
       axios
         .get("http://localhost:3000/api/auth/profile/" + userId , {
-          headers: { Authorization: token },
+          headers: { Authorization: "Bearer" + token },
         })
         .then((res) => {
         
@@ -86,10 +88,10 @@ export default {
       console.log(userId);
       axios
         .delete("http://localhost:3000/api/auth/profile/" + userId , {
-          headers: { Authorization: "Bearer" + token },
-        })
+          headers: {Authorization: "Bearer " + token} , })
         .then(() => {
           alert("Votre compte est supprimé !");
+          localStorage.clear();
           this.$router.push("/");
         })
         .catch((error) => {

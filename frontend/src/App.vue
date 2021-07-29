@@ -80,7 +80,7 @@ body
 img 
 {
   max-width: 100%;
-  border-radius: 20px 20px 20px 20px;
+  border-radius: 0px 0px 20px 20px;
   margin-bottom: 10px;
 }
 

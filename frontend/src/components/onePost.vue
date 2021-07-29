@@ -10,9 +10,8 @@
     <div id="onePost">
       <div id="comment-card" v-for="comment in allComments" :key="comment.id">
         <div class="content">
-          <i class="user-name"
-            >{{ comment.User.pseudo }}</i
-          ><br />
+          {{ comment.User.pseudo }}
+          <br />
           <strong>{{ comment.comment }}</strong><br />
           <i class="date">{{ moment(comment.createdAt).fromNow() }}</i>
         </div>

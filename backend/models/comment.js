@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       models.Comment.belongsTo(models.User, {
         foreignKey: {
-          name: "idUsers",
+          name: "idUser",
           allowNull: false,
         },
       });
@@ -26,9 +26,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Comment.init({
-    idUsers: DataTypes.INTEGER,
+    idUser: DataTypes.INTEGER,
     idPosts: DataTypes.INTEGER,
-    comment: DataTypes.STRING,
+    comment: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Comment',
