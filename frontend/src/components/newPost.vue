@@ -79,7 +79,7 @@ export default {
   background:#A7A6A3;
   border-radius:20px;
 }
-.center
+.centrer
 {
   display:flex;
   justify-content:center;

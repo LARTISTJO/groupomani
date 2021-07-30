@@ -6,7 +6,7 @@
             <li><router-link to="/login" v-on:click="Logout()" style="display: inline-block;text-decoration:none;"> Déconnexion</router-link></li>
         </ul>
         <h2>Accueil</h2>
-        <div class= center>
+        <div class= centrer>
             <newPost />
         </div>
         <div class = center>
