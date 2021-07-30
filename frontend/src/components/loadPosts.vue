@@ -10,8 +10,7 @@
         <div class="createdAt">
           <i>{{ moment(post.createdAt).fromNow() }}</i>
         </div>
-        
-        
+        {{ post.User.pseudo }}
         <div>
           <router-link class="one-post" :to="'/onePost/' + post.id">
           Voir les commentaires</router-link>

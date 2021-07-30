@@ -18,7 +18,7 @@
       <div class="input-group mb-3">
         <button class="btn btn-outline-secondary" type="submit" @click.prevent="buttonNewPost" id="button-addon1">Envoyer</button>
       </div>
-      <div class="error" v-if="error"> {{ error.error }} </div>
+        <div class="error" v-if="error"> {{ error.error }} </div>
       </div>
     </form>
   </div>
@@ -54,7 +54,7 @@ export default {
           headers: { Authorization: "Bearer " + token },
         })
         .then(() => {
-          alert("Votre message a bien été envoyé !");
+          alert("Votre post a bien été creé !");
           document.location.reload();
           this.$router.push("/forum");
         })

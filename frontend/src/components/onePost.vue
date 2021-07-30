@@ -15,7 +15,7 @@
           <strong>{{ comment.comment }}</strong><br />
           <i class="date">{{ moment(comment.createdAt).fromNow() }}</i>
         </div>
-        <div v-if="comment.idUsers == userId">
+        <div v-if="comment.idUser == userId">
           <deleteComment :idComm="comment.id" />
         </div>
         <div v-if="isAdmin == true">
