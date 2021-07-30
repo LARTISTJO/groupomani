@@ -35,10 +35,10 @@ const routes = [
     },
   },
   {
-    path: "/profile",
-    name: "profile",
+    path: "/profil",
+    name: "profil",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/profile.vue"),
+      import(/* webpackChunkName: "about" */ "../views/profil.vue"),
     beforeEnter: (to, from, next) => {
       let token = localStorage.getItem("token");
       if (token) {
