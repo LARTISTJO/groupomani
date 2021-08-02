@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       models.User.hasMany(models.Post, {
-        foreignKey: "idUsers",
+        foreignKey: "idUser",
         onDelete: "cascade",
         hooks: true,
       });

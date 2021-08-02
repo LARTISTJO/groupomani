@@ -12,7 +12,7 @@ exports.createPost = (req, res, next) => {
   }
 
   models.Post.create({
-    idUsers: userId,
+    idUser: userId,
     title: req.body.title,
     content: req.body.content,
     image:
@@ -29,7 +29,7 @@ exports.getAllPosts = (req, res, next) => {
     order: [["updatedAt", "DESC"]],
     attributes: [
       "id",
-      "idUsers",
+      "idUser",
       "title",
       "content",
       "image",
@@ -57,7 +57,7 @@ exports.getOnePost = (req, res, next) => {
   models.Post.findOne({
     attributes: [
       "id",
-      "idUsers",
+      "idUser",
       "title",
       "content",
       "image",
@@ -86,7 +86,7 @@ exports.deletePost = (req, res, next) => {
     where: { id: req.params.id },
   })
     .then((post) => {
-      if (post.idUsers === userId || isAdmin === true) {
+      if (post.idUser === userId || isAdmin === true) {
         if (post.image !== null) {
           const filename = post.image.split("/images/")[1];
           fs.unlink(`images/${filename}`, () => {

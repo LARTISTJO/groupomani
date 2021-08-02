@@ -1,12 +1,12 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import Home from "../views/Home.vue";
+import home from "../views/home.vue";
 
 
 const routes = [
   { 
     path: "/", 
-    name: "Home",
-    component: Home, 
+    name: "home",
+    component: home, 
   },
   { 
     path: "/createAcc",
@@ -35,10 +35,10 @@ const routes = [
     },
   },
   {
-    path: "/profil",
-    name: "profil",
+    path: "/profile",
+    name: "profiel",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/profil.vue"),
+      import(/* webpackChunkName: "about" */ "../views/profile.vue"),
     beforeEnter: (to, from, next) => {
       let token = localStorage.getItem("token");
       if (token) {
