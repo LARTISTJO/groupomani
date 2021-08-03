@@ -15,17 +15,15 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: {
           name: "idUser",
           allowNull: false,
-        },
+        }
       });
       models.Post.hasMany(models.Comment, {
-        foreignKey: {
-          name: "idPosts",
-          allowNull: false,
-        },
+        foreignKey: "idPosts",
+        onDelete: "cascade",
+        hooks: true,
       });
-    }
   }
-    
+}
   Post.init({
     idUser: DataTypes.INTEGER,
     title: DataTypes.STRING,

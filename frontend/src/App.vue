@@ -94,6 +94,7 @@ img
   background:#112140;
   border-radius: 20px;
   padding:32px;
+  margin-top: 100px;
 }
 
 .card__title 

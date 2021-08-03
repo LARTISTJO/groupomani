@@ -40,8 +40,7 @@ export default {
             headers: { Authorization: "Bearer " + token },
           }
         )
-        .then((res) => {
-          console.log(res);
+        .then(() => {
           this.$router.push("/onePost/" + this.id);
           document.location.reload();
         })

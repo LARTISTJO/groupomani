@@ -1,13 +1,13 @@
 <template>
 <img class="profile" src="../assets/icon-left-font.png"> 
   <div class="card profile-card">
-    <h1 class="card__title">Espace Perso</h1>
+    <h1 class=" h1Profil">Espace Perso</h1>
     <router-link to="/forum" style="display: inline-block;text-decoration:none;font-size: 1.5em">Retour</router-link>
-    <p>{{ dataProfile.pseudo }} {{ dataProfile.email }}</p>
+    <p class="data">{{ dataProfile.pseudo }} {{ dataProfile.email }}</p>
     <div class="form-row">
-      <button class="button" type="submit" @click.prevent="deleteProfile">Supprimer mon compte</button>
+      <button class="button suppr" type="submit" @click.prevent="deleteProfile">Supprimer mon compte</button>
     </div>
-       <h4>Mes posts</h4>
+    <h4>Mes posts</h4>
     <div class="my-posts">
       <div class="my-post" v-for="myPost in postsProfile" :key="myPost.id">
         <h3>{{ myPost.title }}</h3>
@@ -97,7 +97,7 @@ export default {
           console.log({ error });
         });
     },
-  },
+  },   
   mounted() {
     this.loadProfile();
     this.loadPostsProfile();
@@ -106,8 +106,30 @@ export default {
 </script>
 
 <style scoped>
+
+.h1Profil
+{
+  text-align:center;
+  color:midnightblue;
+  font-size:2em;
+  margin-bottom:0px;
+}
+
+.data
+{
+  margin-top:10px;
+}
+p
+{
+  font-size:1.3em;
+}
+.suppr
+{
+  background-color: #86196F;
+}
 h4
 {
+  margin-top:25px;
   font-size:1.5em;
 }
 

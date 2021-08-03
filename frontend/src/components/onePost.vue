@@ -1,11 +1,7 @@
 <template>
   <div>
-    <nav id="nav">
-      <ul class="links">
-        <li>
-          <router-link to="/forum">Retour</router-link>
-        </li>
-      </ul>
+    <nav id="nav">  
+      <router-link to="/forum">Retour</router-link>   
     </nav>
     <div id="onePost">
       <div id="comment-card" v-for="comment in allComments" :key="comment.id">
@@ -13,12 +9,12 @@
           {{ comment.User.pseudo }}
           <br />
           <strong>{{ comment.comment }}</strong><br />
-          <i class="date">{{ moment(comment.createdAt).fromNow() }}</i>
+          {{ moment(comment.createdAt).fromNow() }}
         </div>
-        <div v-if="comment.idUser == userId">
+        <div v-if="comment.idUsers == userId">
           <deleteComment :idComm="comment.id" />
         </div>
-        <div v-if="isAdmin == true">
+         <div v-if="isAdmin == true">
           <deleteComment :idComm="comment.id" />
         </div>
       </div>
@@ -35,6 +31,7 @@ let moment = require("moment");
 import newComment from "./newComment";
 import deleteComment from "./deleteComment";
 let jwt = require("jsonwebtoken");
+
 import axios from "axios";
 export default {
   name: "onePost",
@@ -61,11 +58,11 @@ export default {
           headers: { Authorization: "Bearer " + token },
         })
         .then((res) => {
-          this.isAdmin = decodedToken.isAdmin;
+           this.isAdmin = decodedToken.isAdmin;
           this.allComments = res.data;
         })
         .catch((error) => {
-          console.log({ error });
+          { error }
         });
     },
   },
