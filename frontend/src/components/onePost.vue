@@ -1,5 +1,6 @@
 <template>
   <div>
+  <img class="onePost" src="../assets/icon-left-font.png" alt="logo" />
     <nav id="nav">  
       <router-link to="/forum">Retour</router-link>   
     </nav>
@@ -82,6 +83,12 @@ export default {
   align-items: center;
   margin-top: 30px;
 }
+
+.onePost
+{
+  border-radius:0px 0px 20px 20px;
+}
+
 #comment-card {
   background-color: #c46e78;
   color: white;
