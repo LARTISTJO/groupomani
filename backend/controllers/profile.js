@@ -32,14 +32,14 @@ exports.getAllPostsProfile = (req, res, next) => {
     order: [["updatedAt", "DESC"]],
     attributes: [
       "id",
-      "idUser",
+      "idUserp",
       "title",
       "content",
       "image",
       "createdAt",
       "updatedAt",
     ],
-    where: { idUser: userId },
+    where: { idUserp: userId },
   })
     .then((messages) => {
       res.status(200).json(messages);

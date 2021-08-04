@@ -4,17 +4,14 @@
     <div>
       <h2>Poster un message</h2>
       <div>
-        <label for="title"></label>
         <input type="title" id="title" placeholder="Titre" v-model="title" />
       </div>
       <div>
-        <label for="content"></label>
         <textarea type="text" id="content" placeholder="Votre post !" v-model="content"/>
       </div>
       <div class="input-group mb-3">
         <input type="file" class="form-control" id="inputGroupFileAddon03" ref="file" @change="selectFile()" />
       </div>
-
       <div class="input-group mb-3">
         <button class="btn btn-outline-secondary" type="submit" @click.prevent="buttonNewPost" id="button-addon1">Envoyer</button>
       </div>
@@ -83,6 +80,11 @@ export default {
 {
   display:flex;
   justify-content:center;
+}
+
+#button-addon1, #title, #content
+{
+  font-size:1em;
 }
 
 </style>

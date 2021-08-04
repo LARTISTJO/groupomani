@@ -77,7 +77,7 @@ export default {
           this.postsProfile = res.data;
         })
         .catch((error) => {
-          console.log({ error });
+          ({ error });
         });
     },
 
@@ -94,7 +94,7 @@ export default {
           this.$router.push("/");
         })
         .catch((error) => {
-          console.log({ error });
+          ({ error });
         });
     },
   },   
@@ -109,10 +109,10 @@ export default {
 
 .h1Profil
 {
-  text-align:center;
+  
   color:midnightblue;
   font-size:2em;
-  margin-bottom:0px;
+  margin-bottom:10px;
 }
 
 .data
@@ -140,7 +140,8 @@ h4
 
 .profile
 {
-  margin-bottom:45px;
+  margin-bottom:25px;
+  border-radius: 0px 0px 20px 20px;
 }
 
 .my-posts 

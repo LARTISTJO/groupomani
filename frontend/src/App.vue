@@ -79,13 +79,15 @@ body
 img 
 {
   max-width: 100%;
-  border-radius: 0px 0px 20px 20px;
+  border-radius:20px;
   margin-bottom: 10px;
 }
 
 .content
 {
   display: flex;
+  flex-wrap:wrap;
+  justify-content:space-around;
 }
 .card 
 {

@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       models.Post.belongsTo(models.User, {
         foreignKey: {
-          name: "idUser",
+          name: "idUserp",
           allowNull: false,
         }
       });

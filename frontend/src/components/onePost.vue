@@ -11,11 +11,13 @@
           <strong>{{ comment.comment }}</strong><br />
           {{ moment(comment.createdAt).fromNow() }}
         </div>
-        <div v-if="comment.idUsers == userId">
-          <deleteComment :idComm="comment.id" />
-        </div>
-         <div v-if="isAdmin == true">
-          <deleteComment :idComm="comment.id" />
+        <div id="delete">
+          <div v-if="comment.idUsers == userId">
+            <deleteComment :idComm="comment.id" />
+          </div>
+          <div v-else-if="isAdmin == true">
+            <deleteComment :idComm="comment.id" />
+          </div>
         </div>
       </div>
     </div>
@@ -85,7 +87,8 @@ export default {
   color: white;
   font-size: 15px;
   width: 80%;
-  border: solid 2px;
+  border: solid 3px;
+  border-radius:20px;
   margin-bottom: 15px;
   padding: 15px;
   text-align: left;
@@ -110,5 +113,11 @@ export default {
 }
 .commentaire {
   margin: 15px;
+}
+
+#delete
+{
+  display:flex;
+  justify-content:center;
 }
 </style>

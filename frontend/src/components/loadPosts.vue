@@ -79,9 +79,20 @@ export default {
 .title
 {
   margin-top: 40px;
+  font-size:1.7em;
 }
+
 #message-card
 {
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding:10px;
+}
+
+.adminDelete
+{
+  margin-top:10px;
 }
 </style>

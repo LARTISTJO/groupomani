@@ -42,8 +42,7 @@ export default {
       };
       await axios
         .post("http://localhost:3000/api/auth/signup", data)
-        .then((res) => {
-          console.log(res);
+        .then(() => {
           this.$router.push("/login");
         })
         .catch((error) => {
