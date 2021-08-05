@@ -2,8 +2,7 @@
   <div>
     <form method="post" @submit.prevent="buttonNewComment">
       <div>
-        <label for="comment"></label>
-        <input type="text" id="comment" placeholder="Commentaire" v-model="comment"/>
+        <input type="text" aria-required="true" aria-label="écrivez votre commentaire"  id="comment" placeholder="Commentaire" v-model="comment"/>
       </div>
       <button type="submit" @click.prevent="buttonNewComment">Envoyer</button>
     </form>

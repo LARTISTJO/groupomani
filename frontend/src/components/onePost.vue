@@ -1,6 +1,6 @@
 <template>
   <div>
-  <img class="onePost" src="../assets/icon-left-font.png" alt="logo" />
+  <img class="onePost" alt="Logo groupomania" src="../assets/icon-left-font.png" />
     <nav id="nav">  
       <router-link to="/forum">Retour</router-link>   
     </nav>
@@ -8,8 +8,8 @@
       <div id="comment-card" v-for="comment in allComments" :key="comment.id">
         <div class="content">
           {{ comment.User.pseudo }}
-          <br />
-          <strong>{{ comment.comment }}</strong><br />
+          
+          <strong>{{ comment.comment }}</strong>
           {{ moment(comment.createdAt).fromNow() }}
         </div>
         <div id="delete">
@@ -90,7 +90,7 @@ export default {
 }
 
 #comment-card {
-  background-color: #c46e78;
+  background-color: #727780;
   color: white;
   font-size: 15px;
   width: 80%;

@@ -38,17 +38,10 @@ body
   min-height: 100vh;
 }
 
-.button 
+.centerLogo
 {
-  background: #2196F3;
-  color:white;
-  border-radius: 8px;
-  font-weight: 800;
-  font-size: 15px;
-  border: none;
-  width: 100%;
-  padding: 16px;
-  transition: .4s background-color;
+  display:flex;
+  justify-content:center;
 }
 
   input::placeholder 
@@ -78,6 +71,7 @@ body
 
 img 
 {
+  width:600px;
   max-width: 100%;
   border-radius:20px;
   margin-bottom: 10px;
@@ -93,7 +87,7 @@ img
 {
   max-width: 100%;
   width: 900px;
-  background:#112140;
+  background:#727780;
   border-radius: 20px;
   padding:32px;
   margin-top: 100px;
@@ -103,13 +97,13 @@ img
 {
   text-align:center;
   font-weight: 800;
-  color: #A7A6A3;
+  color: white;
 }
 
 .card__subtitle 
 {
   text-align: center;
-  color:#A7A6A3;
+  color:white;
   font-size: 20px;
 }
 
@@ -123,13 +117,15 @@ img
   border: none;
   width: 100%;
   padding: 11px;
-  transition: .4s background-color;
 }
 
 .card__action 
 {
-  color:#2196F3;
-  text-decoration: underline;
+  color:white;
+  font-style:italic;
+  font-weight:700;
+  text-decoration: underline #2196F3 3.5px;
+
 }
 
 .card__action:hover 

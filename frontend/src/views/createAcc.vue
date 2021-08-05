@@ -1,17 +1,19 @@
 <template>
-  <img src="../assets/icon-left-font.png"> 
+  <div class=centerLogo>
+    <img class="create"  alt="Logo groupomania" src="../assets/icon-left-font.png"> 
+  </div>
     <form method="post" @submit.prevent="createAccount" class="card">
       <h1 class="card__title">Inscription</h1>
-      <p class="card__subtitle">Tu as déjà un compte ? <router-link to="/login" class="card__action">Connexion</router-link></p>
+      <p class="card__subtitle">Tu as déjà un compte ? <router-link to="/login" aria-label="lien vers page login" class="card__action">Connexion</router-link></p>
       
       <div class="form-row">
-        <input v-model="email" class="form-row__input" type="email" placeholder="Adresse mail"/>
+        <input v-model="email" aria-required="true" aria-label="écrivez votre email" class="form-row__input" type="email" placeholder="Adresse mail"/>
       </div>
       <div class="form-row">
-        <input v-model="pseudo" class="form-row__input" type="text" placeholder="Pseudo"/>
+        <input v-model="pseudo" aria-required="true" aria-label="écrivez votre pseudo" class="form-row__input" type="text" placeholder="Pseudo"/>
       </div>
       <div class="form-row">
-        <input v-model="password" class="form-row__input" type="password" placeholder="Mot de passe"/>
+        <input v-model="password" aria-required="true" aria-label="écrivez votre mot de passe" class="form-row__input" type="password" placeholder="Mot de passe"/>
       </div>
       <div class="form-row">
         <button type="submit" @click.prevent="createAccount" class="button">Créer mon compte</button>
@@ -74,4 +76,8 @@ export default {
   background:#cecece;
 }
 
+.create 
+{
+  border-radius:0px 0px 20px 20px; 
+}
 </style>>

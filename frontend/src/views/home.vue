@@ -1,13 +1,13 @@
 <template>
-    <createAcc />
+    <login />
 </template>
 
 <script>
-import createAcc from "../views/createAcc";
+import login from "../views/login";
 export default {
   name: "Home",
   components: {
-    createAcc,
+    login,
   },
 };
 </script>

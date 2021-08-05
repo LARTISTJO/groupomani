@@ -3,7 +3,7 @@
       <div id="message-card" v-for="post in allPosts" :key="post.id">
         <h1 class="title">{{ post.title }}</h1>
         <div class="content">
-          <img :src="post.image" :alt="post.image"
+          <img class="imgLoad" :src="post.image" :alt="post.image"
             v-if="post.image != null"/> 
         </div>
         <h1>{{ post.content }}</h1>
@@ -71,6 +71,13 @@ export default {
 </script>
 
 <style>
+
+.imgLoad
+{
+  height:500px;
+  max-height:100%;
+}
+
 .size
 {
   font-size : 1.2em;

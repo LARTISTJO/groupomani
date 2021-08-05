@@ -1,5 +1,5 @@
 <template>
-<img class="profile" src="../assets/icon-left-font.png"> 
+<img class="profile" alt="Logo groupomania"  src="../assets/icon-left-font.png"> 
   <div class="card profile-card">
     <h1 class=" h1Profil">Espace Perso</h1>
     <router-link to="/forum" style="display: inline-block;text-decoration:none;font-size: 1.5em">Retour</router-link>
@@ -156,7 +156,7 @@ h4
 
 .my-post 
 {
-  background-color: #192a48;
+  background-color: #727780;
   color: white;
   font-size: 1.4em;
   margin: 15px;

@@ -1,9 +1,9 @@
 <template>
     <section>
-        <img src="../assets/icon-left-font.png" alt="logo" />
+        <img src="../assets/icon-left-font.png" alt="Logo groupomania" />
         <ul class="links">
-            <li><router-link to="/profile" style="display: inline-block;text-decoration:none;"> Profil</router-link></li>
-            <li><router-link to="/login" v-on:click="Logout()" style="display: inline-block;text-decoration:none;"> Déconnexion</router-link></li>
+            <li><router-link to="/profile" aria-label="lien vers page profil" style="display: inline-block;text-decoration:none;"> Profil</router-link></li>
+            <li><router-link to="/login" aria-label="déconnexion lien vers page login" v-on:click="Logout()" style="display: inline-block;text-decoration:none;"> Déconnexion</router-link></li>
         </ul>
         <h2>Accueil</h2>
         <div class= centrer>
@@ -44,7 +44,6 @@ export default {
 img 
 {
   display: flex;
-  max-width: 100%;
   border-radius: 0px 0px 20px 20px;
   margin: auto;
   margin-bottom: 40px;

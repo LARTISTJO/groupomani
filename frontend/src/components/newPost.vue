@@ -1,16 +1,16 @@
 <template>
-  <div class="forum">
-    <form method="post" @submit.prevent="buttonNewPost" class="card forum">
+  <div class="forme">
+    <form method="post" @submit.prevent="buttonNewPost" class= "forum">
     <div>
-      <h2>Poster un message</h2>
+      <h2 class="h2forum">Poster un message</h2>
       <div>
-        <input type="title" id="title" placeholder="Titre" v-model="title" />
+        <input type="title" aria-required="true" aria-label="écrivez le titre de votre post"  id="title" placeholder="Titre" v-model="title" />
       </div>
       <div>
-        <textarea type="text" id="content" placeholder="Votre post !" v-model="content"/>
+        <textarea type="text" aria-required="true" aria-label="écrivez le texte de votre post" id="content" placeholder="Votre post !" v-model="content"/>
       </div>
       <div class="input-group mb-3">
-        <input type="file" class="form-control" id="inputGroupFileAddon03" ref="file" @change="selectFile()" />
+        <input type="file" style="color:transparent;" aria-label="Choisissez l'image de votre post" class="form-control" id="inputGroupFileAddon03" ref="file" @change="selectFile()"/>
       </div>
       <div class="input-group mb-3">
         <button class="btn btn-outline-secondary" type="submit" @click.prevent="buttonNewPost" id="button-addon1">Envoyer</button>
@@ -68,13 +68,20 @@ export default {
 
 <style>
 
-.forum
+.forme, .forum
 {
   max-width: 100%;
   width: 700px;
+}
+
+.forum
+{
+  
+  height: 200px;
   margin-bottom: 20px;
-  background:#A7A6A3;
+  background:#727780;
   border-radius:20px;
+  padding:32px;
 }
 .centrer
 {
@@ -85,6 +92,11 @@ export default {
 #button-addon1, #title, #content
 {
   font-size:1em;
+}
+
+.h2forum
+{
+  color: #B19FF9;
 }
 
 </style>
