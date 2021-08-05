@@ -4,4 +4,4 @@ import router from './router';
 
 createApp(app)
 .use(router)
-.mount('#app')
+.mount('#app');
