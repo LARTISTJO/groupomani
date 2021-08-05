@@ -1,7 +1,5 @@
 <template>
-  <div>
     <button type="submit" @click.prevent="deleteComment">x</button>
-  </div>
 </template>
 
 

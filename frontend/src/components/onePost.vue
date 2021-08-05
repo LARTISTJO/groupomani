@@ -8,7 +8,6 @@
       <div id="comment-card" v-for="comment in allComments" :key="comment.id">
         <div class="content">
           {{ comment.User.pseudo }}
-          
           <strong>{{ comment.comment }}</strong>
           {{ moment(comment.createdAt).fromNow() }}
         </div>
@@ -76,6 +75,7 @@ export default {
 </script>
 
 <style scoped>
+
 #onePost 
 {
   display: flex;
@@ -89,7 +89,8 @@ export default {
   border-radius:0px 0px 20px 20px;
 }
 
-#comment-card {
+#comment-card 
+{
   background-color: #727780;
   color: white;
   font-size: 15px;
@@ -100,17 +101,24 @@ export default {
   padding: 15px;
   text-align: left;
 }
+
 .pseudo
 {
   font-size: 11px;
 }
-.date {
+
+.date 
+{
   font-size: 12px;
 }
-.comment {
+
+.comment 
+{
   font-size: 20px;
 }
-.createdAt {
+
+.createdAt 
+{
   font-size: 12px;
   display: flex;
   justify-content: space-between;
@@ -118,8 +126,12 @@ export default {
   padding-right: 30px;
   margin-bottom: 15px;
 }
-.commentaire {
-  margin: 15px;
+
+.commentaire 
+{
+  display:flex;
+  justify-content:center;
+  
 }
 
 #delete

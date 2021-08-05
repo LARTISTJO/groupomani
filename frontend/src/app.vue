@@ -139,4 +139,11 @@ img
   background: #1976D2;
 }
 
+.error
+{
+  color:white;
+  font-size: 1.4em;
+  font-weight:800;
+}
+
 </style>

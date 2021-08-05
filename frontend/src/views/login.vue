@@ -52,13 +52,6 @@ export default {
 </script>
 <style>
 
-.error
-{
-  color:gray;
-  font-size: 1.7em;
-  font-weight:800;
-}
-
 .login
 {
   border-radius: 0px 0px 20px 20px;
