@@ -17,7 +17,10 @@ import axios from "axios";
 export default {
   name: "newComment",
   props: { 
-    id:Number
+    id: { 
+      type: [Number, String],
+      required: true
+    }
   },
   data() {
     return {
