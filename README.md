@@ -21,8 +21,11 @@ Backend
 Si vous ne l'avez pas, installez Node.js, placez-vous en ligne de commandes dans le dossier backend ensuite:
 
 npm install
+
 npx sequelize-cli db:create
+
 npx sequelize-cli db:migrate
+
 npm start
 
 Frontend
@@ -30,6 +33,7 @@ Frontend
 Si vous ne l'avez pas, installez Node.js, placez-vous en ligne de commandes dans le dossier frontend ensuite:
 
 npm install
+
 npm run serve
 
 Ensuite deux liens vous seront proposés, cliquer sur le premier lien ou il est écrit Local.
