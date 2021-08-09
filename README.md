@@ -7,6 +7,8 @@ Pour ce projet Node.js, Sequelize, Mysql et Vue.js ont été utilisés.
 
 Installation
 
+BDD 📒
+
 Premièrement vous devez cloner le projet, ensuite paramétrer la base de données.
 
 Mysql doit être installé sur votre ordinateur.
@@ -14,7 +16,7 @@ Mysql doit être installé sur votre ordinateur.
 L'username et le mot de passe sont root par défaut vous devrez les  modifier dans le fichier config.json en fonction des votres. 
 
 
-Backend
+Backend 📁
 
 Si vous ne l'avez pas, installez Node.js, placez-vous en ligne de commandes dans le dossier backend ensuite:
 
@@ -27,7 +29,7 @@ npx sequelize-cli db:migrate
 npm start
 
 
-Frontend
+Frontend 💻
 
 Si vous ne l'avez pas, installez Node.js, placez-vous en ligne de commandes dans le dossier frontend ensuite:
 
