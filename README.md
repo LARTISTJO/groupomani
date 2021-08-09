@@ -33,3 +33,6 @@ npm install
 npm run serve
 
 Ensuite deux liens vous seront proposés, cliquer sur le premier lien ou il est écrit Local.
+
+En créant un utilisateur et en mettant isAdmin sur 1 vous donnerez à une personne les droits admin, 
+ainsi elle pourra supprimer les posts et commentaires de tous les utilisateurs.
