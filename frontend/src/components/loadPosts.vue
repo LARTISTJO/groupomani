@@ -76,6 +76,7 @@ export default {
 {
   height:500px;
   max-height:100%;
+  width:600px;
 }
 
 .size

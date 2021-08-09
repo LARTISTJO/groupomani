@@ -136,6 +136,9 @@ h4
 .profile-card
 {
   background:#A7A6A3;
+  width: 700px;
+  margin: auto;
+  margin-top: 100px;
 }
 
 .profile

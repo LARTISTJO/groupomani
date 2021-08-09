@@ -71,7 +71,7 @@ body
 
 img 
 {
-  width:600px;
+  width:900px;
   max-width: 100%;
   border-radius:20px;
   margin-bottom: 10px;
