@@ -169,13 +169,4 @@ h4
   border-radius:20px;
 }
 
-.error 
-{
-  font-size: 13px;
-  background-color: rgb(231, 185, 185);
-  color: rgb(53, 21, 21);
-  margin-top: 30px;
-  padding: 10px;
-}
-
 </style>
