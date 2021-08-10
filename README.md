@@ -7,16 +7,16 @@ Pour ce projet Node.js, Sequelize, Mysql et Vue.js ont été utilisés.
 
 Installation
 
-Premièrement vous devez cloner le projet, ensuite paramétrer la base de données
+BDD 📒
 
-Mysql doit être installé sur votre ordinateur si ce n'est pas le cas vous pouvez utiliser MAMP ou WAMP.
+Premièrement vous devez cloner le projet, ensuite paramétrer la base de données.
 
-Les serveurs Apache et Mysql devront être lancés ;
+Mysql doit être installé sur votre ordinateur.
 
 L'username et le mot de passe sont root par défaut vous devrez les  modifier dans le fichier config.json en fonction des votres. 
 
 
-Backend
+Backend 📁
 
 Si vous ne l'avez pas, installez Node.js, placez-vous en ligne de commandes dans le dossier backend ensuite:
 
@@ -28,7 +28,8 @@ npx sequelize-cli db:migrate
 
 npm start
 
-Frontend
+
+Frontend 💻
 
 Si vous ne l'avez pas, installez Node.js, placez-vous en ligne de commandes dans le dossier frontend ensuite:
 
@@ -38,5 +39,5 @@ npm run serve
 
 Ensuite deux liens vous seront proposés, cliquer sur le premier lien ou il est écrit Local.
 
-En créant un utilisateur et en mettant isAdmin sur 1 vous donnerez à une personne les droits admin, 
+En créant un utilisateur et en mettant isAdmin sur 1 au sein de la BDD vous donnerez à une personne les droits admin, 
 ainsi elle pourra supprimer les posts et commentaires de tous les utilisateurs.
