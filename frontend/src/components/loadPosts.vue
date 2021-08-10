@@ -41,7 +41,7 @@ export default {
       userId: localStorage.getItem("id"),
       isAdmin: "",
       allPosts: [],
-      idUsers: "",
+      idUserp: "",
       title: "",
       content: "",
       createdAt: "",

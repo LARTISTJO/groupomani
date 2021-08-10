@@ -1,5 +1,5 @@
 <template>
-    <button type="submit" @click.prevent="deleteComment">x</button>
+    <button type="submit" @click.prevent="deleteComment">X</button>
 </template>
 
 
@@ -36,7 +36,7 @@ export default {
           document.location.reload();
         })
         .catch((error) => {
-        { error }
+         ({ error });
         });
     },
   },

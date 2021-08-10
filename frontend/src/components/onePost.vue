@@ -12,7 +12,7 @@
           {{ moment(comment.createdAt).fromNow() }}
         </div>
         <div id="delete">
-          <div v-if="comment.idUsers == userId">
+          <div v-if="comment.idUserp == userId">
             <deleteComment :idComm="comment.id" />
           </div>
           <div v-else-if="isAdmin == true">
