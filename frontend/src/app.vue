@@ -82,7 +82,9 @@ img
   display: flex;
   flex-wrap:wrap;
   justify-content:space-around;
+  font-size:20px;
 }
+
 .card 
 {
   max-width: 100%;

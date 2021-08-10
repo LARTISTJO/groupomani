@@ -60,7 +60,7 @@ export default {
           this.isAdmin = decodedToken.isAdmin;
         })
         .catch((error) => {
-          console.log({ error });
+          { error }
         });
     },
   },

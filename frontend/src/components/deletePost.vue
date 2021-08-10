@@ -30,7 +30,7 @@ export default {
           document.location.reload();
         })
         .catch((error) => {
-          console.log({ error });
+          { error }
         });
     },
   },

@@ -62,7 +62,7 @@ export default {
           this.dataProfile = res.data;
         })
         .catch((error) => {
-          console.log({ error });
+        { error }
         });
     },    
 
