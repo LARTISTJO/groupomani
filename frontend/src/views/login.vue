@@ -44,8 +44,7 @@ export default {
           this.$router.push("/forum");
         })
         .catch((error) => {
-         this.error = error.response.data;
-          (error.response.data);
+         this.error = error.response.data;  
         });
     },
   },
