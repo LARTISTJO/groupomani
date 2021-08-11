@@ -11,7 +11,7 @@
     <div class="my-posts">
       <div class="my-post" v-for="myPost in postsProfile" :key="myPost.id">
         <h3>{{ myPost.title }}</h3>
-        <img :src="myPost.image" :alt="myPost.image" v-if="myPost.image != null"/><br />
+        <img :src="myPost.image" v-if="myPost.image != null" alt="Image du Post"/><br />
         <p>{{ myPost.content }}</p>
         <deletePost :id="myPost.id" />
       </div>
